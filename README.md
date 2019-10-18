@@ -5,7 +5,9 @@ the Rasa NLU pipeline.
 
 ## 1. Spellchecking
 
-We provide a custom Rasa component that implements spellchecking on each token and automatically replaces misspelled tokens with the corrected version. The spellchecking itself is based on [pyspellchecker](https://github.com/barrust/pyspellchecker). The component has several parameters that can be set in the configuration file. For example, it supports multiple language ("en", "es", "de", "fr", "pt"). You can also set a distance value, which is set to 1 by default. This parameter is used in the spellchecking algorithm and for details refer to the corresponding GitHub project [pyspellchecker](https://github.com/barrust/pyspellchecker).
+We provide a custom Rasa component that implements spellchecking on each token and automatically replaces misspelled tokens with the corrected version. The spellchecking itself is based on [pyspellchecker](https://github.com/barrust/pyspellchecker). The component has several parameters that can be set in the configuration file. For example, it supports multiple language ("en", "es", "de", "fr", "pt"). You can also set a distance value, which is set to 1 by default. This parameter is used in the spellchecking algorithm and for details refer to the corresponding GitHub project [pyspellchecker](https://github.com/barrust/pyspellchecker). Since the algorithm uses a word frequency list to detect misspelled words and provide the correct version, you can also provide a custom word frequency file (each row with "word, frequency" format).
+
+Below you can find a sample configuration using the spellchecking component and providing a custom word frequency file to it.
 
 ```
 pipeline:
